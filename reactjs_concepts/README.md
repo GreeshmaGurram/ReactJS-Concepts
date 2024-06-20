@@ -1,3 +1,9 @@
+npx => node package execute
+react => library, declarative (just say react what to do and it will do it no need to say how to do)
+
+exports/import => 2 types: default and named
+hooks for functional components =>introduced in 2018 => v16.0 alpha
+
 * props to a component is sent as an object. are immutable
 eg: <Greet name="Gree">   
 const Greet = (props) => { return (<h1>Hello {props.name}</h1>)}
