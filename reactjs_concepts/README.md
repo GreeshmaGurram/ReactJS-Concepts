@@ -29,20 +29,25 @@ if (isLoggedIn) { message = <div>Welcome User</div>} else { message = <div>Welco
 
 4. Short circuit operator: this.state.isLoggedIn && <div>Welcome user</div>
 
+.Use Index as a key to render list using map operator only when the below 3 conditions are satisfied:
+1. The list is static and doesnt change(items dont get added or removed)
+2. The list is not re ordered(filtered or sorted)
+3. the list options dont include unique id
+
 * Inline styling : const heading = {
     fontSize: '72px
 , color: 'blue} <h1 style={heading}>Inline</h1>
 
 * Lifecycle methods:
-1. Mounting: comp created and inserted into dom => constructor(props), getDerivedStateFromProps(props, state), render(), componentDidMount()
-2. Updating: comp re rendered due to changes in state or props => getDerivedStateFromProps(), shouldComponentUpdate(nextProps, nextState) - for performance optimization, render(), getSnapshotBeforeUpdate(prevProps, prevState), componentDidUpdate(prevProps, PrevStste, snapshot)
+1. Mounting: comp created and inserted into dom => constructor(props), getDerivedStateFromProps(props, state) => used to set the state from props, render(), componentDidMount() => children life cycle methods are called after parent render method is called
+2. Updating: comp re rendered due to changes in state or props => getDerivedStateFromProps(), shouldComponentUpdate(nextProps, nextState) - for performance optimization => by default all the components will be re rendered on change in the state or props. shouldComponentUpdate prevents this behaviour. Compares the prev state and prop values to next state and prop values and return true if componnet has to be updated and return false if component need not be updated as there is not difference in the prev state n props and present state and props, render(), getSnapshotBeforeUpdate(prevProps, prevState), componentDidUpdate(prevProps, PrevStste, snapshot)
 3. Unmounting: comp removed from dom => componentWillUnmount()
 4. Error Handling => getDerivedStateFromError(error), componentDidCatch(error, info)
 
 * Fragment: <> </> or <React.Fragment key={}> => groups many child components without adding extra node // only key prop can be used with fragment
 
 * Regualr component vs Pure component ==> in class components
-pure renders only once as shouldComponentUpdate method is executed or re rendered only when difference in that method but for reg this method is by default true Therefore performance boost using pure comps
+pure renders only once as shouldComponentUpdate method is executed with shallow props and states comparision or re rendered only when difference in that method but for reg this method is by default true Therefore performance boost using pure comps
 
 * memo ===> pure components for functional Compoennts ==> export default React.memo(ComponentName)   => above react v16.6
 
