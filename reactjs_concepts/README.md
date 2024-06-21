@@ -51,7 +51,7 @@ pure renders only once as shouldComponentUpdate method is executed with shallow 
 
 * memo ===> pure components for functional Compoennts ==> export default React.memo(ComponentName)   => above react v16.6
 
-* refs ==> to access DOM nodes directly in react
+* refs ==> to access DOM nodes directly in react => used only in class comps
 
 * portals : can render a element or comp outside the dom node ==> Event bubling => every component in the portal acts as a React child to any of the React DOM ancestors 
 
