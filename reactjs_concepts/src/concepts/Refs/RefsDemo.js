@@ -6,6 +6,7 @@ class RefsDemo extends Component {
       super(props)
       this.inputRef = React.createRef()
     //   2nd method callback refs
+        // callback refs used to pass function as ref rather that var created using createRef()
       this.cbRef = null
       this.setCbRef = (el) => {
         this.cbRef = el
